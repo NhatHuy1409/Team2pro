@@ -24,6 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
  */
 public class JDice {
+// thiếu dấu "" sửa thành "clear"
     static final String CLEAR=Clear;
     static final String ROLL="Roll Selection";
     static void showError(String s) {
@@ -34,7 +35,8 @@ public class JDice {
 	JComboBox inputBox;
 	long lastEvent; /* hack to prevent double events with text
 			   entry */
-	public JDice-Listener(JList resultList,
+//		tên constructor không trùng khớp với tên lớp
+		public JDice-Listener(JList resultList,
 			     JComboBox inputBox){
 
 	    this.listItems=new Vector<String>();
