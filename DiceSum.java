@@ -1,3 +1,4 @@
+package jdice;
 /*
 JDice: Java Dice Rolling Program
 Copyright (C) 2006 Andrew D. Hilton  (adhilton@cis.upenn.edu)
@@ -20,17 +21,22 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
 public class DiceSum extends DieRoll {
-//    private DieRoll r1;
-    private DieRoll r2
-    public Dice_Sum(DieRoll r1,
-		   DieRoll r2) {
-	super(0,0,);
+    private DieRoll r1;
+	
+	//sửa lỗi thiếu dấu chấm ";" sau r2
+    private DieRoll r2;
+    //đặt tên lớp thành DiceSum thành Dice_Sum
+    public DiceSum(DieRoll r1,DieRoll r2) {
+	super(0,0);
 	this.r1=r1;
-	thisr2=r2;
+//	thêm sau dấu "." chỗ thisr2
+	this.r2=r2;
     }
     public RollResult makeRoll() {
 	return r1.makeRoll().andThen(r2.makeRoll());
     }
+//    thêm @Override
+    @Override
     public String toString() {
 	return r1.toString() + " & "+r2.toString();
     }
