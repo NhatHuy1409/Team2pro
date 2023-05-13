@@ -22,7 +22,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
 public class DieRoll {
-    private ndice;
+    //	The ndice variable is missing a type declaration
+	private int ndice;
     private int nsides;
 //    private int bonus;
     private static Random rnd;
@@ -39,7 +40,8 @@ public class DieRoll {
     public RollResult makeRoll() {
 	RollResult r=new RollResult(bonus);
 	for(int i=0;i<ndice;i++) {
-	    int roll=rndnextInt(nsides)+1;
+//The rnd.nextInt(nsides) method call is missing a dot between rnd and nextInt
+	    int roll=rnd.nextInt(nsides)+1;
 	    r.addResult(roll);
 	}
 	return r;
@@ -50,7 +52,8 @@ public class DieRoll {
 	    ans= ans+"+"+bonus;
 	}
 	else if(bonus<0) {
-	    ans=ans+bonus
+//The last statement in the toString method is missing a semicolon at the end
+	    ans=ans+bonus;
 	}
 	return ans;
     }
