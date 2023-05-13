@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
 public class DieRoll {
-    //	The ndice variable is missing a type declaration
+    // Biến ndice thiếu khai báo kiểu
 	private int ndice;
     private int nsides;
 //    private int bonus;
@@ -40,7 +40,7 @@ public class DieRoll {
     public RollResult makeRoll() {
 	RollResult r=new RollResult(bonus);
 	for(int i=0;i<ndice;i++) {
-//The rnd.nextInt(nsides) method call is missing a dot between rnd and nextInt
+//Lệnh gọi phương thức rnd.nextInt(nsides) thiếu dấu chấm giữa rnd và nextInt
 	    int roll=rnd.nextInt(nsides)+1;
 	    r.addResult(roll);
 	}
@@ -52,7 +52,7 @@ public class DieRoll {
 	    ans= ans+"+"+bonus;
 	}
 	else if(bonus<0) {
-//The last statement in the toString method is missing a semicolon at the end
+//Câu lệnh cuối cùng trong phương thức toString thiếu dấu chấm phẩy ở cuối
 	    ans=ans+bonus;
 	}
 	return ans;
