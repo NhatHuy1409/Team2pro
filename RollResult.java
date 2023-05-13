@@ -21,36 +21,30 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
 
-public class RollResult {
-
-    // Member variables
+public class RollResult { /*missing quotes */
     int total;
     int modifier;
-    Vector<Integer> rolls; // stores the individual dice rolls
+    Vector<Integer> rolls; 
     
-    // Constructor
     public RollResult(int bonus) {
         this.total = bonus;
         this.modifier = bonus;
         rolls = new Vector<Integer>();
     }
     
-    // Method to add a result to the rolls
     public void addResult(int res){
-        total += res; // add result to total
-        rolls.add(res); // add result to rolls vector
+        total += res; /*missing comma*/
+        rolls.add(res); 
     }
     
-    // Method to combine two RollResult objects
     public RollResult andThen(RollResult r2) {
-        int total = this.total + r2.total; // add the totals
+        int total = this.total + r2.total; 
         Vector<Integer> rolls = new Vector<Integer>();
-        rolls.addAll(this.rolls); // add all rolls from the first object
+        rolls.addAll(this.rolls);// add all rolls from the first object
         rolls.addAll(r2.rolls); // add all rolls from the second object
-        return new RollResult(total, this.modifier + r2.modifier, rolls); // create a new RollResult object
+        return new RollResult(total, this.modifier + r2.modifier, rolls); 
     }
     
-    // Constructor used when combining two RollResult objects
     private RollResult(int total, int modifier, Vector<Integer> rolls){
         this.total = total;
         this.modifier = modifier;
