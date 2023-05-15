@@ -21,10 +21,16 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
 
-public class RollResult { /*missing quotes */
+public class RollResult { /*missing a quote */
     int total;
     int modifier;
     Vector<Integer> rolls; 
+    
+     private RollResult(int total, int modifier, Vector<Integer> rolls){ /* Inappropriate newline */
+        this.total = total;
+        this.modifier = modifier;
+        this.rolls = rolls;
+    }
     
     public RollResult(int bonus) {
         this.total = bonus;
@@ -33,7 +39,7 @@ public class RollResult { /*missing quotes */
     }
     
     public void addResult(int res){
-        total += res; /*missing comma*/
+        total += res; /*missing a comma*/
         rolls.add(res); 
     }
     
@@ -42,17 +48,11 @@ public class RollResult { /*missing quotes */
         Vector<Integer> rolls = new Vector<Integer>();
         rolls.addAll(this.rolls);// add all rolls from the first object
         rolls.addAll(r2.rolls); // add all rolls from the second object
-        return new RollResult(total, this.modifier + r2.modifier, rolls); 
-    }
-    
-    private RollResult(int total, int modifier, Vector<Integer> rolls){
-        this.total = total;
-        this.modifier = modifier;
-        this.rolls = rolls;
+        return new RollResult(total, this.modifier + r2.modifier, rolls); /* Inappropriate newline */
     }
     
     // Method to convert RollResult to a String
     public String toString() {
-        return total + " <= " + rolls.toString() + (modifier > 0 ? ("+" + modifier) : modifier < 0 ? modifier : "");
+        return total + " <= " + rolls.toString() + (modifier > 0 ? ("+" + modifier) : modifier < 0 ? modifier : ""); /* Inappropriate newline */
     }
 }
